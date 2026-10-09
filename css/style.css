@@ -77,9 +77,9 @@ footer {
 */
 .site-header {
   position: fixed;
-  background-color: var(--color-bg);
+  background-color: var(--color-surface-accent);
   top : 0;
-  left : auto;
+  left : 0;
   width : 100%;
   display: grid;
   grid-template-columns: minmax(200px,auto) 1fr;

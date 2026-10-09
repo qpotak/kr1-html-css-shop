@@ -76,7 +76,14 @@ footer {
   чтобы оно не растягивалось слишком сильно на широких экранах.
 */
 .site-header {
-  max-width: var(--container-width);
+  position: fixed;
+  background-color: var(--color-bg);
+  top : 0;
+  left : auto;
+  width : 100%;
+  display: grid;
+  grid-template-columns: minmax(200px,auto) 1fr;
+  align-items: center;
   margin: 0 auto;
 }
 
@@ -86,6 +93,7 @@ footer {
 .site-logo {
   font-weight: bold;
   text-decoration: none;
+  text-align: center;
   color: var(--color-text);
 }
 
@@ -93,16 +101,19 @@ footer {
   Убираем стандартные отступы и маркеры списка навигации.
 */
 .site-nav__list {
+  display : grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  justify-content: center;
   padding: 0;
-  margin: var(--space-md) 0 0;
   list-style: none;
 }
 
 /*
-  Добавляем расстояние между пунктами меню.
-*/
+ Вырвваниваем ссылки
+ */
 .site-nav__list li {
-  margin-bottom: var(--space-sm);
+  text-align: center;
 }
 
 /*
@@ -195,7 +206,7 @@ a:focus-visible {
 
 .button:hover {
   background-color: var(--color-primary-dark);
-}gi
+}
 
 .button:focus-visible {
   outline: 2px solid var(--color-primary);

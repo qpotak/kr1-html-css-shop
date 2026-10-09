@@ -140,6 +140,10 @@ footer {
   background-color: #003f86;
 }
 
+.button:active {
+    background-color: red;
+}
+
 /*
   Дополнительный информационный блок.
 */

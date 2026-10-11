@@ -43,6 +43,12 @@
    2. Базовые стили
    =============================== */
 
+html {
+  scroll-behavior: smooth;
+}
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -71,10 +77,6 @@ footer {
   background-color: var(--color-bg);
 }
 
-/*
-  Ограничиваем ширину содержимого шапки,
-  чтобы оно не растягивалось слишком сильно на широких экранах.
-*/
 .site-header {
   position: fixed;
   background-color: var(--color-surface-accent);
@@ -87,9 +89,6 @@ footer {
   margin: 0 auto;
 }
 
-/*
-  Оформляем текстовый логотип.
-*/
 .site-logo {
   font-weight: bold;
   text-decoration: none;
@@ -97,9 +96,7 @@ footer {
   color: var(--color-text);
 }
 
-/*
-  Убираем стандартные отступы и маркеры списка навигации.
-*/
+
 .site-nav__list {
   display : grid;
   grid-template-columns: repeat(6, 1fr);
@@ -124,13 +121,15 @@ footer {
   text-decoration: none;
 }
 
-/*
-  При наведении мыши подчёркиваем ссылку.
-  Подробно состояния интерфейса будут рассмотрены в практической работе 1.7.
-*/
 .site-nav__list a:hover {
   text-decoration: underline;
 }
+
+:target {
+  outline: 2px dashed var(--color-primary);
+  outline-offset: 4px;
+}
+
 
 /* ===============================
    3. Общие элементы интерфейса
@@ -152,6 +151,23 @@ a:focus-visible {
 /* ===============================
    4. Компоненты страницы
    =============================== */
+
+.breadcrumbs {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-md);
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.breadcrumbs a {
+  color: var(--color-primary);
+}
+
+.breadcrumbs span::before {
+  content: " / ";
+  color: var(--color-primary-dark);
+}
+
 
 .hero {
   max-width: var(--container-width);

@@ -98,13 +98,16 @@ footer {
 
 
 .site-nav__list {
-  display : grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 0;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-sm) 0;
+  margin: 0 0 0;
   list-style: none;
 }
+
 
 /*
  Вырвваниваем ссылки
@@ -117,13 +120,18 @@ footer {
   Оформляем ссылки меню.
 */
 .site-nav__list a {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
   color: var(--color-primary);
   text-decoration: none;
+  border-radius: var(--radius-sm);
 }
 
 .site-nav__list a:hover {
-  text-decoration: underline;
+  color: var(--color-white);
+  background-color: var(--color-primary);
 }
+
 
 :target {
   outline: 2px dashed var(--color-primary);

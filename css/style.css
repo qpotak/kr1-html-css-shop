@@ -198,6 +198,7 @@ a:focus-visible {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: var(--space-md);
+  column-gap: var(--space-md);
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   padding: var(--space-lg) var(--space-md);
@@ -205,22 +206,37 @@ a:focus-visible {
   border-radius: var(--radius-lg);
 }
 
-/*
-  Карточка товара — самостоятельный блок.
-  На следующих занятиях карточки будут доработаны и выстроены в сетку.
-*/
+.catalog-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-rows: repeat(3, auto);
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  padding: var(--space-lg) var(--space-md);
+  background-color: var(--color-surface-accent);
+  border-radius: var(--radius-lg);
+}
+
 .product-card {
+  display: flex;
+  flex-direction: column;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   background-color: var(--color-bg);
 }
 
-.product-card:hover {
-  border-color: var(--color-primary);
+.product-card .button {
+  margin-top: var(--space-xs);
+  align-self: flex-start;
 }
 
+
 .product-card h3 {
+  margin-top: 0;
+}
+
+.product-card p {
   margin-top: 0;
 }
 
@@ -262,6 +278,64 @@ a:focus-visible {
   border-left: 4px solid var(--color-primary);
   background-color: var(--color-surface);
 }
+
+/* каталог товаров
+*/
+
+.catalog-layout {
+  max-width: var(--container-width);
+  margin: 0 auto var(--space-xl);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-areas: "filters products";
+  gap: var(--space-lg);
+}
+
+.catalog-filters {
+  grid-area: filters;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.catalog-products {
+  grid-area: products;
+}
+
+.filters-form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.filters-form fieldset {
+  margin: 0;
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.filters-form legend {
+  font-weight: 700;
+}
+
+.filters-form label {
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.filters-form input[type="number"] {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font: inherit;
+}
+
+
+/* 
+каталог товаров
+*/
 
 
 /* ===============================

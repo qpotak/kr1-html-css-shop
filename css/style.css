@@ -62,10 +62,7 @@ body {
 }
 
 
-
-header,
-main,
-footer {
+main{
   padding: var(--space-lg);
 }
 
@@ -75,21 +72,22 @@ header {
 
 footer {
   background-color: var(--color-bg);
+  padding: var(--space-lg);
 }
 
 .site-header {
-  position: fixed;
   background-color: var(--color-surface-accent);
-  top : 0;
-  left : 0;
-  width : 100%;
+  position: sticky;
+  top: 0;
+}
+
+.site-header__inner {
   display: grid;
   grid-template-columns: minmax(200px,auto) 1fr;
   align-items: center;
-  margin: 0 auto;
 }
 
-.site-logo {
+.site-header__logo {
   font-weight: bold;
   text-decoration: none;
   text-align: center;
@@ -112,14 +110,14 @@ footer {
 /*
  Вырвваниваем ссылки
  */
-.site-nav__list li {
+.site-nav__item {
   text-align: center;
 }
 
 /*
   Оформляем ссылки меню.
 */
-.site-nav__list a {
+.site-nav__link {
   display: inline-block;
   padding: var(--space-sm) var(--space-md);
   color: var(--color-primary);
@@ -127,11 +125,15 @@ footer {
   border-radius: var(--radius-sm);
 }
 
-.site-nav__list a:hover {
+.site-nav__link:hover {
   color: var(--color-white);
   background-color: var(--color-primary);
 }
 
+.site-nav__link--active {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
 
 :target {
   outline: 2px dashed var(--color-primary);
